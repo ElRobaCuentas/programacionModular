@@ -1,1 +1,1 @@
-o
+char eleccion

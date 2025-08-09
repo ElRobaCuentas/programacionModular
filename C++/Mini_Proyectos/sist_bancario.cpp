@@ -1,5 +1,6 @@
 #include <iostream> 
 
+void estructuraBanco();
 void mostrarSaldo(double saldo);
 double depositar(); //solo voy a depositar, no necesito enviarle como parametro nada
 double retirar(double saldo);
@@ -12,16 +13,7 @@ int main() {
     
     do {
 
-    std::cout<<"*******************\n";
-    std::cout<<"SISTEMA BANCARIO\n";
-    std::cout<<"*******************\n";
-
-    std::cout<<"ELIJA ALGUNA DE ESTAS OPCIONES \n";
-
-    std::cout<<"1. VER MI SALDO \n";
-    std::cout<<"2. DEPOSITAR DINERO \n";
-    std::cout<<"3. RETIRAR DINERO \n";
-    std::cout<<"4. SALIR DEL SISTEMA \n";
+    estructuraBanco();
     
     std::cin>>opcion;
 
@@ -79,7 +71,21 @@ double retirar(double saldo) {
 
     if( retiro < saldo ) {
         return retiro;
-    } else {    
+    } else {
+        std::cout<<"Saldo insuficiente!\n";    
         return 0;
     }
+}
+
+void estructuraBanco() {
+    std::cout<<"*******************\n";
+    std::cout<<"SISTEMA BANCARIO\n";
+    std::cout<<"*******************\n";
+
+    std::cout<<"ELIJA ALGUNA DE ESTAS OPCIONES \n";
+
+    std::cout<<"1. VER MI SALDO \n";
+    std::cout<<"2. DEPOSITAR DINERO \n";
+    std::cout<<"3. RETIRAR DINERO \n";
+    std::cout<<"4. SALIR DEL SISTEMA \n";
 }
